@@ -1,33 +1,50 @@
-/**
- * @description check if the user prefers dark mode
- */
+export const THEME_KEY = "itsjh-theme";
+
 export const applySavedTheme = () => {
-  const theme = localStorage.getItem("theme");
+  const theme = localStorage.getItem(THEME_KEY);
   if (theme === "dark") {
-    document.documentElement.classList.remove("light");
-    document.documentElement.classList.add("dark");
-    document.documentElement.setAttribute("data-theme", "dark");
+    document.documentElement.classList.remove("itsjh-light");
+    document.documentElement.classList.add("itsjh-dark");
+    document.documentElement.setAttribute("data-theme", "itsjh-dark");
   } else {
-    document.documentElement.classList.remove("dark");
-    document.documentElement.classList.add("light");
-    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.classList.remove("itsjh-dark");
+    document.documentElement.classList.add("itsjh-light");
+    document.documentElement.setAttribute("data-theme", "itsjh-light");
   }
 };
-/**
- * @description change to light mode
- */
-export const setLightMode = () => {
-  localStorage.setItem("theme", "light");
-  document.documentElement.classList.remove("dark");
-  document.documentElement.classList.add("light");
-  document.documentElement.setAttribute("data-theme", "light");
+
+export const getTheme = () => {
+  const theme = localStorage.getItem(THEME_KEY);
+  if (theme === "dark") {
+    return "dark";
+  } else if (theme === "light") {
+    return "light";
+  } else {
+    // Default to light mode if no theme is set
+    setLightMode();
+    return "light";
+  }
 };
-/**
- * @description change to dark mode
- */
+
+export const toggleTheme = () => {
+  const theme = localStorage.getItem(THEME_KEY);
+  if (theme === "dark") {
+    setLightMode();
+  } else {
+    setDarkMode();
+  }
+};
+
+export const setLightMode = () => {
+  localStorage.setItem(THEME_KEY, "light");
+  document.documentElement.classList.remove("itsjh-dark");
+  document.documentElement.classList.add("itsjh-light");
+  document.documentElement.setAttribute("data-theme", "itsjh-light");
+};
+
 export const setDarkMode = () => {
-  localStorage.setItem("theme", "dark");
-  document.documentElement.classList.remove("light");
-  document.documentElement.classList.add("dark");
-  document.documentElement.setAttribute("data-theme", "dark");
+  localStorage.setItem(THEME_KEY, "dark");
+  document.documentElement.classList.remove("itsjh-light");
+  document.documentElement.classList.add("itsjh-dark");
+  document.documentElement.setAttribute("data-theme", "itsjh-dark");
 };

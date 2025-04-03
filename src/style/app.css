@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where([data-theme=itsjh-dark], [data-theme=itsjh-dark] *));
 
 :root {
   --radius: 0.625rem;
@@ -37,7 +37,7 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
-.dark {
+.itsjh-dark {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.21 0.006 285.885);
@@ -113,7 +113,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-family: "IBM Plex Sans KR", sans-serif;
   }
 }
