@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 
-type TextPreset = "hero" | "title" | "subtitle" | "body" | "caption" | "button";
+type TextPreset =
+  | "hero"
+  | "display"
+  | "title"
+  | "subtitle"
+  | "body"
+  | "caption"
+  | "button";
 type PaddingPreset = "section" | "block" | "compact" | "none";
 
 export const useStyle = () => {
@@ -18,6 +25,7 @@ export const useStyle = () => {
 
   const textSizeMap: Record<TextPreset, { desktop: string; mobile: string }> = {
     hero: { desktop: "text-9xl", mobile: "text-4xl" },
+    display: { desktop: "text-6xl", mobile: "text-3xl" },
     title: { desktop: "text-4xl", mobile: "text-2xl" },
     subtitle: { desktop: "text-2xl", mobile: "text-xl" },
     body: { desktop: "text-base", mobile: "text-sm" },
