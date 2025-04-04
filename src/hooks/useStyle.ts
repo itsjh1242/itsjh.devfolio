@@ -8,7 +8,10 @@ type TextPreset =
   | "body"
   | "caption"
   | "button";
+
 type PaddingPreset = "section" | "block" | "compact" | "none";
+
+type LottiePreset = "spinner" | "loading" | "success" | "error";
 
 export const useStyle = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,7 +27,7 @@ export const useStyle = () => {
   }, []);
 
   const textSizeMap: Record<TextPreset, { desktop: string; mobile: string }> = {
-    hero: { desktop: "text-9xl", mobile: "text-4xl" },
+    hero: { desktop: "text-9xl", mobile: "text-6xl" },
     display: { desktop: "text-6xl", mobile: "text-3xl" },
     title: { desktop: "text-4xl", mobile: "text-2xl" },
     subtitle: { desktop: "text-2xl", mobile: "text-xl" },
@@ -41,13 +44,22 @@ export const useStyle = () => {
       none: { desktop: "p-0", mobile: "p-0" },
     };
 
-  const getText = (preset: TextPreset) =>
-    textSizeMap[preset][isMobile ? "mobile" : "desktop"];
-  const getPadding = (preset: PaddingPreset) =>
-    paddingMap[preset][isMobile ? "mobile" : "desktop"];
+  const lottieSizeMap: Record<
+    LottiePreset,
+    { desktop: number; mobile: number }
+  > = {
+    spinner: { desktop: 64, mobile: 48 },
+    loading: { desktop: 100, mobile: 60 },
+    success: { desktop: 80, mobile: 50 },
+    error: { desktop: 80, mobile: 50 },
+  };
 
   return {
-    text: getText,
-    padding: getPadding,
+    text: (preset: TextPreset) =>
+      textSizeMap[preset][isMobile ? "mobile" : "desktop"],
+    padding: (preset: PaddingPreset) =>
+      paddingMap[preset][isMobile ? "mobile" : "desktop"],
+    lottie: (preset: LottiePreset) =>
+      lottieSizeMap[preset][isMobile ? "mobile" : "desktop"],
   };
 };

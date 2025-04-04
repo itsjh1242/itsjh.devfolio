@@ -1,11 +1,9 @@
 import LOGO_B from "@/assets/logo-b.png";
-import { getTheme, toggleTheme } from "@/hooks/theme/mode";
-import { ChevronRightIcon, MoonIcon, SunIcon } from "lucide-react";
+import { ChevronRightIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
 
 export const Nav: React.FC = () => {
-  const [theme, setTheme] = useState(getTheme());
   const [visible, setVisible] = useState(true);
   const [isTop, setIsTop] = useState(true);
   const prevScrollY = useRef(0);
@@ -62,16 +60,6 @@ export const Nav: React.FC = () => {
         </div>
         {/* Action Menu */}
         <div className="flex w-[200px] items-center justify-end space-x-4">
-          <Button
-            className="h-[36px] w-[36px] cursor-pointer rounded-full"
-            variant="outline"
-            onClick={() => {
-              toggleTheme();
-              setTheme(getTheme());
-            }}
-          >
-            {theme === "dark" ? <MoonIcon size={16} /> : <SunIcon size={16} />}
-          </Button>
           <Button
             className="flex items-center justify-center rounded-full"
             variant="outline"

@@ -1,8 +1,10 @@
 import { ViewContainer } from "@/components/layout/section";
 import { cn } from "@/lib/utils";
 import { HardwareInfo } from "./hardware-info";
-import { HeroTitle } from "./hero-title";
+import { HeroDescriptionName, HeroDescriptionRole, HeroTitle } from "./hero";
 import { InfoGraphic } from "./info-graphic";
+import { Sign } from "./sign";
+import { ThemeMode } from "./theme-mode";
 
 export const LandingView: React.FC = () => {
   return (
@@ -14,8 +16,12 @@ export const LandingView: React.FC = () => {
       <GridItem className="col-span-1 border-0 border-l-1"></GridItem>
 
       {/* second */}
-      <GridItem className="col-span-1 border-0 border-t-1"></GridItem>
-      <GridItem className="col-span-2 border-r-0 border-b-0"></GridItem>
+      <GridItem className="col-span-1 border-0 border-t-1">
+        <HeroDescriptionName />
+      </GridItem>
+      <GridItem className="col-span-2 border-r-0 border-b-0">
+        <HeroDescriptionRole />
+      </GridItem>
 
       {/* third */}
       <GridItem className="col-span-2 grid h-full grid-rows-3 border-0">
@@ -27,11 +33,15 @@ export const LandingView: React.FC = () => {
         </GridItem>
         <GridItem className="col-span-1 grid grid-cols-3 border-0">
           <GridItem className="col-span-2 border-0 border-t-1 border-r-0"></GridItem>
-          <GridItem className="col-span-1 border-b-0"></GridItem>
+          <GridItem className="col-span-1 border-b-0">
+            <ThemeMode />
+          </GridItem>
         </GridItem>
         <GridItem className="col-span-1 border-t-1 border-b-0 border-l-0"></GridItem>
       </GridItem>
-      <GridItem className="col-span-1 border-0 border-t-1"></GridItem>
+      <GridItem className="col-span-1 border-0 border-t-1">
+        <Sign />
+      </GridItem>
       {/* foutrh */}
       <GridItem className="col-span-3 border-r-0 border-l-0">
         <InfoGraphic />
