@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { HardwareInfo } from "./hardware-info";
 import { HeroDescriptionName, HeroDescriptionRole, HeroTitle } from "./hero";
 import { InfoGraphic } from "./info-graphic";
+import { Location } from "./location";
 import { Sign } from "./sign";
 import { ThemeMode } from "./theme-mode";
 
@@ -37,7 +38,9 @@ export const LandingView: React.FC = () => {
             <ThemeMode />
           </GridItem>
         </GridItem>
-        <GridItem className="col-span-1 border-t-1 border-b-0 border-l-0"></GridItem>
+        <GridItem className="col-span-1 border-t-1 border-b-0 border-l-0">
+          <Location />
+        </GridItem>
       </GridItem>
       <GridItem className="col-span-1 border-0 border-t-1">
         <Sign />

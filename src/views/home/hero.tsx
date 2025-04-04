@@ -48,7 +48,7 @@ export const HeroDescriptionRole: React.FC = () => {
           <HeroRoleContainer
             Icon={CommandIcon}
             role="Engineer >>"
-            command="Engineer >> --sref 77421 --stack deepcore --runtime stable --precision 9000 --logic-mode async --compile true --v 6.1 --ar 16:9"
+            command="--sref 77421 --stack deepcore --runtime stable --precision 9000 --logic-mode async --compile true --v 6.1 --ar 16:9"
           />
           <HeroRoleContainer
             Icon={SquareTerminalIcon}
@@ -79,7 +79,7 @@ const HeroRoleContainer: React.FC<HeroRoleContainerProps> = ({
   const style = useStyle();
   return (
     <div
-      className={`font-montserrat flex w-full max-w-[500px] min-w-[280px] cursor-pointer items-start space-x-2 rounded-md border bg-gray-100/10 p-2 text-left backdrop-blur-sm hover:bg-gray-100/50 ${style.text("caption")}`}
+      className={`font-montserrat flex w-full max-w-[500px] min-w-[280px] cursor-pointer items-start justify-between space-x-2 rounded-md border bg-gray-100/10 p-2 text-left backdrop-blur-sm hover:bg-gray-100/50 ${style.text("caption")}`}
     >
       <div className="flex w-[110px] items-center space-x-1">
         <Icon size={14} />

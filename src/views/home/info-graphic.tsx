@@ -3,7 +3,7 @@ import { useStyle } from "@/hooks/useStyle";
 
 export const InfoGraphic: React.FC = () => {
   return (
-    <div className="flex h-full w-full items-center justify-between">
+    <div className="flex h-full w-full items-center justify-between py-2">
       <InfoGraphicItem title="Projects Launched" count={20} duration={3} />
       <InfoGraphicItem title="Years of Experience" count={6} duration={4} />
       <InfoGraphicItem title="Partners" count={10} duration={5} />
