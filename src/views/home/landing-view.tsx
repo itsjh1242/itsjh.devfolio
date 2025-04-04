@@ -1,8 +1,8 @@
 import { ViewContainer } from "@/components/layout/section";
 import { cn } from "@/lib/utils";
+import { HardwareInfo } from "./hardware-info";
 import { HeroTitle } from "./hero-title";
 import { InfoGraphic } from "./info-graphic";
-import { ScreenSize } from "./screen-size";
 
 export const LandingView: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ export const LandingView: React.FC = () => {
         <GridItem className="col-span-1 grid grid-cols-3 border-0 border-t-1">
           <GridItem className="col-span-1 border-0"></GridItem>
           <GridItem className="col-span-2 border-0 border-r-1 border-l-1">
-            <ScreenSize />
+            <HardwareInfo />
           </GridItem>
         </GridItem>
         <GridItem className="col-span-1 grid grid-cols-3 border-0">
