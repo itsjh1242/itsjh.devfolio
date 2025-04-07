@@ -20,7 +20,7 @@ export const Sign: React.FC = () => {
         <img
           src={SignitureImage}
           alt="signiture"
-          className="z-10 h-auto w-[100px] object-contain dark:invert"
+          className="pointer-events-none z-10 h-auto w-[100px] object-contain dark:invert"
         />
       </div>
     </div>

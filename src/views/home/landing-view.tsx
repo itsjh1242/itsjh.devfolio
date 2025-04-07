@@ -1,5 +1,6 @@
 import { ViewContainer } from "@/components/layout/section";
 import { cn } from "@/lib/utils";
+import { Display } from "./display";
 import { HardwareInfo } from "./hardware-info";
 import { HeroDescriptionName, HeroDescriptionRole, HeroTitle } from "./hero";
 import { InfoGraphic } from "./info-graphic";
@@ -14,7 +15,9 @@ export const LandingView: React.FC = () => {
       <GridItem className="col-span-2 border-0">
         <HeroTitle />
       </GridItem>
-      <GridItem className="col-span-1 border-0 border-l-1"></GridItem>
+      <GridItem className="col-span-1 border-0 border-l-1">
+        <Display />
+      </GridItem>
 
       {/* second */}
       <GridItem className="col-span-1 border-0 border-t-1">

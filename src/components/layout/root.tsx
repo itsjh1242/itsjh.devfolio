@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { Footer } from "./footer";
 import { Nav } from "./nav";
 
 export const RootLayout: React.FC = () => {
@@ -9,6 +10,7 @@ export const RootLayout: React.FC = () => {
         <div className="flex-1">
           <Outlet />
         </div>
+        <Footer />
       </div>
     </main>
   );
